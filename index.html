@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Self-Introduction Generator</title>
+    <style>
+   
+   body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2em;
+  color: #333;
+  text-shadow: 1px 1px #ccc;
+}
+
+form {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  width: 150px;
+  height: 45px;
+  background-color: #FFD300;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #4CAF50;
+}
+
+#output {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 1px 1px #fff;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#output:hover {
+  box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+
+   
+   </style>
+  </head>
+  <body>
+    <h1>Self-Introduction Generator</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="qualification">Qualification:</label>
+      <input type="text" id="qualification" name="qualification"><br><br>
+
+      <label for="school">College/School:</label>
+      <input type="text" id="school" name="school"><br><br>
+
+      <label for="hometown">Hometown:</label>
+      <input type="text" id="hometown" name="hometown"><br><br>
+
+      <label for="passion">Passion:</label>
+      <select id="passion" name="passion">
+        <option value="">Select</option>
+        <option value="Coding">Coding</option>
+        <option value="Sports">Sports</option>
+        <option value="Music">Music</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Dancing">Dancing</option>
+        <option value="Photography">Photography</option>
+        <option value="Content creation">Content creation</option>
+        <option value="Public speaking">Public speaking</option>
+      </select><br><br>
+
+      <label for="strength">Strength:</label>
+      <select id="strength" name="strength">
+        <option value="">Select</option>
+        <option value="Leadership">Leadership</option>
+        <option value="Communication">Communication</option>
+        <option value="Problem-solving">Problem-solving</option>
+        <option value="Adaptability">Adaptability</option>
+          <option value="Creativity">Creativity</option>
+            <option value="Public speaking">Public speaking</option>
+            <option value="I am always motivated">Motivated</option>
+              <option value="Innovative thinking">Innovative thinking</option>
+              <option value="I am goal oriented">Goal oriented</option>
+              
+              
+      </select><br><br>
+
+      <label for="weakness">Weakness:</label>
+      <select id="weakness" name="weakness">
+        <option value="">Select</option>
+        <option value="Procrastination">Procrastination</option>
+        <option value="Public-speaking">Public-speaking</option>
+        <option value="Time-management">Time-management</option>
+        <option value="Perfectionism">Perfectionism</option>
+        <option value="Struggle to deal with change">Struggle to deal with change</option>
+        <option value="Not very good at Mathematics">Not very good at Mathematics</option>
+        <option value="I am very sensitive">Very sensitive</option>
+        <option value="I am afraid of faliure">Afraid of failure</option>
+        
+      </select><br><br>
+
+      <label for="goal">Goal:</label>
+      <input type="text" id="goal" name="goal"><br><br>
+
+      <button type="button" onclick="generate()">Generate</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+    
+    function generate() {
+  var name = document.getElementById("name").value;
+  var qualification = document.getElementById("qualification").value;
+  var school = document.getElementById("school").value;
+  var hometown = document.getElementById("hometown").value;
+  var passion = document.getElementById("passion").value;
+  var strength = document.getElementById("strength").value;
+  var weakness = document.getElementById("weakness").value;
+  var goal = document.getElementById("goal").value;
+
+  var output = "Hello everyone ! my name is " + name + " and I am delighted to introduce myself to all of you. I'm currently studying " + qualification + " at " + school + ". I'm originally from " + hometown + ". ";
+
+  if (passion !== "") {
+    output += " I'm really passionate about " + passion + " and I'm always looking for new ways to learn and improve my skills.";
+  }
+
+  if (strength !== "") {
+    output += " My strength is " + strength + ". ";
+  }
+
+  if (weakness !== "") {
+    output += "My weakness is " + weakness + " and ";
+  }
+
+  if (goal !== "") {
+    output += "my goal is to " + goal + ". ";
+  }
+
+  output += "Thank you for taking the time to get to know me.";
+
+  document.getElementById("output").innerHTML = output;
+}
+   
+    </script>
+    
+      
+ <footer>
+ <style>
+ footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-left p {
+  margin: 0;
+  text-align: center;
+   
+  
+}
+
+}
+
+ 
+ 
+ </style>
+ 
+ 
+ 
+  <div class="footer-left"> <p>&copy; 2023 Self Introduction Generator</p> 
+ </footer>
+ <p>Contact: itsswagmedia@gmail.com </p>
+    
+    
+  </body>
+</html>
+
